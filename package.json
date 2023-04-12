@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js"
+    "start": "node src/index.js"
   },
   "keywords": [],
   "author": "",
@@ -17,7 +17,8 @@
     "mongoose": "^7.0.3",
     "smartystreets-javascript-sdk": "^2.1.1"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.22"
+  "engines": {
+    "npm": "19.7.0",
+    "node": "9.6.3"
   }
 }
