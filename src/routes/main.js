@@ -11,16 +11,12 @@ router.get('/cart', async (req, res) => {
     // Extract the list of products from the database shopping_cart_db
     const products = await Products.find({}).lean({})
 
+    // Calculate the total price of all products
+    let totalPrice = products.reduce((acc, curr) => acc + curr.price, 0);
+    console.log('Total price'+totalPrice)
     // Render the shopping cart with the available products in database
-    res.render('cart', { products });
+    res.render('cart', { products, totalPrice });
 });
 
-router.get('/thank-you', (req, res) => {
-    // Extract the transaction ID from the request parameters
-    const transactionId = req.query.transactionId
-  
-    // Render the thank you page with the transaction ID
-    res.render('thank-you', { transactionId })
-  })
 
 module.exports = router;

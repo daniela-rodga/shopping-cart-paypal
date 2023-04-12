@@ -22,8 +22,6 @@ app.set('view engine', '.hbs')
 app.use(express.urlencoded({extended: false}))
 app.use(methodOverride('_method')) //PUT AND DELETE
 
-// Global variables
-
 // Routes
 app.use(require('./routes/main'));
 
